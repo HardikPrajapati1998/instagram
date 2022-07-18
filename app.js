@@ -79,7 +79,7 @@ api.use({
 var redirect_uri = 'https://hardik-demo-app.herokuapp.com/handleauth';
 
 exports.authorize_user = function(req, res) {
-  res.redirect(api.get_authorization_url(redirect_uri, { scope: ['user_profile'], state: 'a state' }));
+  res.redirect(api.get_authorization_url(redirect_uri, { scope: ['user_profile'] }));
 };
  
 exports.handleauth = function(req, res) {
