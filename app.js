@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var api = require('instagram-node').instagram();
-api.use({ access_token: 'IGQVJWd3ZARdzFPdE9FdEx4VGM5eXZAPdmFMTnc4S3ItX2U5N0tudnFGY1drem13RC13cWdEUjFLR0lHeVlUekI0V0FxLWZAnT3prd2VmMGhKR3VzaWZAadFlsbWFBaEg3dkpMLURySlBrZA2ZAIYWpPenh0VAZDZD' });
+api.use({ access_token: 'IGQVJWUkZAwMUZAwc3RBV2VTcS1nWGoxZAk9qZAUY0dHdnRUdhcmI3SDMta2MxRXNTc1dfb0tSZAFRKc3ZAMck1FS1FoMENKdUllU2RuTDdUdkprUVRFWGg3d0tnZAmFwOFk5S1V0c0hQcFJDRU5LSVVQZA3BCTgZDZD' });
 var app = express();
 
 // view engine setup
