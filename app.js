@@ -89,7 +89,11 @@ exports.handleauth = function(req, res) {
       res.send("Didn't work");
     } else {
       console.log('Yay! Access token is ' + result.access_token);
-      res.send('You made it!!');
+     req.session.accesstoken = result.access_token;
+      req.session.uid = result.user.id;
+
+      api.use({access_token: req.session.accesstoken});
+      res.redirect('/main');
     }
   });
 };
