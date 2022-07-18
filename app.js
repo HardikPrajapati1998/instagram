@@ -83,21 +83,13 @@ exports.authorize_user = function(req, res) {
 };
  
 exports.handleauth = function(req, res) {
-api.authorize_user(req.query.code, redirect_uri, function(err, result) {
+  api.authorize_user(req.query.code, redirect_uri, function(err, result) {
     if (err) {
       console.log(err.body);
       res.send("Didn't work");
     } else {
-      /*
-      console.log('Access Token ' + result.access_token);
-      console.log('User ID ' + result.user.id);
+      console.log('Yay! Access token is ' + result.access_token);
       res.send('You made it!!');
-      */
-      req.session.accesstoken = result.access_token;
-      req.session.uid = result.user.id;
-
-      api.use({access_token: req.session.accesstoken});
-      res.redirect('/main');
     }
   });
 };
