@@ -91,7 +91,8 @@ exports.handleauth = function(req, res) {
       console.log('Yay! Access token is ' + result.access_token);
      req.session.accesstoken = result.access_token;
       req.session.uid = result.user.id;
-
+console.log('accesstoken ='+ req.session.accesstoken);
+console.log('uid ='+ req.session.uid);
       api.use({access_token: req.session.accesstoken});
       res.redirect('/main');
     }
@@ -121,6 +122,7 @@ app.get('/main', function(req, res, next){
       if(err){
         res.send(err);
       }
+      console.log('data ='+ result);
       res.render('main', {
         title: 'My Instagram',
         user: result,
